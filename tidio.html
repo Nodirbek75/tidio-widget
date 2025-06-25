@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        background: white;
-      }
-    </style>
-
-    <!-- Replace with your real Tidio key -->
-    <script src="//code.tidio.co/0kbm4jqybxrrarlw7cjflhnb8fzv6lyt.js" async></script>
-
-    <!-- Auto-open chat when widget is ready -->
-    <script>
-      document.addEventListener("tidioChat-ready", function () {
-        window.tidioChatApi.open();
-      });
-    </script>
-  </head>
-  <body></body>
-</html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tidio Chat</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            }
+            .chat-container {
+                height: 100vh;
+                width: 100vw;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="chat-container">
+            <!-- Tidio will inject the chat widget here -->
+        </div>
+        
+        <script src="//code.tidio.co/0kbm4jqybxrrarlw7cjflhnb8fzv6lyt.js" async></script>
+        
+        <script>
+            // Ensure Tidio loads and opens automatically
+            document.addEventListener('tidioChat-ready', function() {
+                if (window.tidioChatApi) {
+                    window.tidioChatApi.open();
+                }
+            });
+            
+            // Fallback to open chat after a delay
+            setTimeout(function() {
+                if (window.tidioChatApi) {
+                    window.tidioChatApi.open();
+                }
+            }, 2000);
+        </script>
+    </body>
+    </html>
