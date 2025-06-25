@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: white;
-        }
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: white;
+      }
     </style>
-    <script src="//code.tidio.co/0kbm4jqybxrrarlw7cjflhnb8fzv6lyt.js" async></script>
-</head>
 
-<body>
-  <p style="text-align: center;">Loading chat...</p>
-</body>
+    <!-- Replace with your real Tidio key -->
+    <script src="//code.tidio.co/0kbm4jqybxrrarlw7cjflhnb8fzv6lyt.js" async></script>
+
+    <!-- Auto-open chat when widget is ready -->
+    <script>
+      document.addEventListener("tidioChat-ready", function () {
+        window.tidioChatApi.open();
+      });
+    </script>
+  </head>
+  <body></body>
 </html>
